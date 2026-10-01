@@ -1,0 +1,467 @@
+
+.pxl-hidden {
+    display: none;
+}
+
+.pxl-img--mask {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    .pxl--mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-mask-repeat: no-repeat;
+        -ms-mask-repeat: no-repeat;
+        -o-mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        -ms-mask-position: center center;
+        -o-mask-position: center center;
+        mask-position: center center;
+        mask-size: cover;
+        -webkit-mask-size: cover;
+    }
+}
+.pxl-dflex-nw {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.pxl-flex-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.pxl-flex-middle {
+    display: inline-flex;
+    align-items: center;
+}
+.pxl-widget-flex {
+    > .elementor-widget-container > div {
+        display: flex;
+    }
+}
+.el-empty:empty, .pxl-empty:empty {
+    display: none !important;
+}
+.pxl-spill {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.color-primary {
+    color: $primary_color;
+    fill: $primary_color;
+}
+.color-secondary {
+    color: $secondary_color;
+    fill: $secondary_color;
+}
+.text-gradient {
+    @include background-vertical($gradient_color_from, $gradient_color_to);
+    background-color: transparent;
+    background-clip: text;
+    -o-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+.text-gradient-vertical {
+    @include background-vertical($gradient_color_from, $gradient_color_to);
+    background-color: transparent;
+    background-clip: text;
+    -o-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+.text-gradient-bottom {
+    @include background-gradient-bottom($gradient_color_from, $gradient_color_to);
+    background-color: transparent;
+    background-clip: text;
+    -o-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+.pxl-icon-color-gradient i {
+    @include background-horizontal($gradient_color_from, $gradient_color_to);
+    background-color: transparent;
+    background-clip: text;
+    -o-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+.text-gradient-bg {
+    background-color: transparent;
+    background-clip: text;
+    -o-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+.rm-text-gradient {
+    text-fill-color: inherit;
+    -webkit-text-fill-color: inherit;
+    background-image: none;
+}
+.bg-gradient {
+	@include background-horizontal($gradient_color_from, $gradient_color_to);
+}
+.bg-gradient-bottom {
+    @include background-gradient-bottom($gradient_color_from, $gradient_color_to);
+}
+.ft-theme-default {
+	@include ft_theme_default($ft_theme_default);
+}
+.bg-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.pxl-close {
+    @include border-radius(50%);
+    background: rgba(255,255,255,0.7);
+    border: 6px solid transparent;
+    color: #777;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        margin-top: -1px;
+        transform-origin: 50% 50%;
+        @include transition(all .25s cubic-bezier(.645,.045,.355,1));
+        background-color: #1b1b1b;
+    }
+    &:before {
+        @include transform(rotate(45deg));
+    }
+    &:after {
+        @include transform(rotate(-45deg));
+    }
+    &:hover {
+        &:before, &:after {
+            @include transform(rotate(0deg));
+        }
+    }
+}
+.pxl-left {
+    float: left;
+}
+.pxl-right {
+    float: right;
+}
+.pxl-hide {
+    display: none;
+}
+@media #{$min-xl} {
+    .pxl-hide-xl {
+        display: none !important;
+    }
+}
+@media #{$max-lg} {
+    .pxl-hide-lg {
+        display: none !important;
+    }
+}
+
+@media #{$max-lg2} {
+    .pxl-hide-lg2 {
+        display: none !important;
+    }
+}
+
+.pxl-flex-nowrap {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.pxl-flex-v {
+    display: flex;
+    flex-direction: column;
+}
+.pxl-absolute-full {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// 
+.pxl-two-line {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+}
+.pxl-three-line {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+
+@media #{$max-sm} {
+    .pxl-hiden-sm {
+        display: none;
+    }
+}
+
+@media #{$max-xs} {
+    .pxl-hiden-xs {
+        display: none;
+    }
+}
+
+.pxl-p1, .pxl-p4, .pxl-p5, .pxl-p6, .pxl-b3{
+    font-family: 'Heebo', sans-serif;
+    margin: 0;
+    clear: both;
+}
+
+.pxl-p1 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.4545;
+    letter-spacing: -0.22px ;
+}
+.pxl-p2 {
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.18px;
+}
+.pxl-p3 {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.15px;
+}
+.pxl-p4 {
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: -0.15px;    
+}
+.pxl-p5 {
+    font-size: 13px;
+    line-height: 1;
+}
+.pxl-p6 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5833;
+}
+.pxl-b1 {
+    font-size: 15px;
+    line-height: 2;
+}
+.pxl-b2 {
+    font-size: 14px;
+    line-height: 1;
+}
+.pxl-b3 {
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 1.44px;
+}
+
+// Color
+.pxl-dark-100{
+    color: #223035;
+}
+.pxl-dark-200{
+    color: #38464A;
+}
+.pxl-dark-300{
+    color: #19272B;
+}
+.pxl-dark-teal{
+    color: #263037;
+}
+.pxl-dark-slate{
+    // Text Dark
+    color: #20282D;
+}
+.pxl-green-1{
+    color: #547079;
+}
+.pxl-green-2{
+    color: #85979B;
+}
+.pxl-blue-1{
+    color: #97BAC7;
+}
+.pxl-light-blue-1{
+    color: #E1F2F2;
+}
+.pxl-gray{
+    color: #D9D9D9;
+}
+.pxl-blue-2 {
+    color: #667EAB;
+}
+.pxl-blue-3{
+    background-color: #00255C;
+}
+.pxl-light-blue-2 {
+    color: #D3DEF1;
+}
+.pxl-black {
+    color: #000;
+}
+.pxl-white {
+    color: #FFF;
+}
+.pxl-brown {
+    color: #B29063;
+}
+.pxl-red {
+    color: red;
+}
+// Background color
+.pxl-bg-dark-100{
+    background-color: #223035;
+}
+.pxl-bg-dark-200{
+    background-color: #38464A;
+}
+.pxl-bg-dark-300{
+    background-color: #19272B;
+}
+.pxl-bg-dark-teal{
+    background-color: #263037;
+}
+.pxl-bg-dark-slate{
+    background-color: #20282D;
+}
+.pxl-bg-green-1{
+    background-color: #547079;
+}
+.pxl-bg-green-2{
+    background-color: #85979B;
+}
+.pxl-bg-blue-1{
+    background-color: #97BAC7;
+}
+.pxl-bg-blue-2 {
+    background-color: #667EAB;
+}
+.pxl-bg-blue-3{
+    background-color: #00255C;
+}
+.pxl-bg-light-blue-1{
+    background-color: #E1F2F2;
+}
+.pxl-bg-gray{
+    background-color: #D9D9D9;
+}
+.pxl-bg-light-blue-2 {
+    background-color: #D3DEF1;
+}
+.pxl-bg-black {
+    background-color: #000;
+}
+.pxl-bg-white {
+    background-color: #FFF;
+}
+.pxl-bg-brown {
+    background-color: #B29063;
+}
+.pxl-title--highlight {
+    font-family: "DM Serif Text", sans-serif;
+    font-style: italic;
+}
+
+
+.pxl-icon--plus {
+    height: 10px;
+    width: 10px;
+    position: relative;
+    cursor: pointer;
+    &:before, &:after {
+        content: '';
+        background-color: #122a00;
+        position: absolute;
+        @include transition(all .25s cubic-bezier(.645,.045,.355,1));
+    }
+    &:before {
+        width: 10px;
+        height: 2px;
+        top: 4px;
+        left: 0;
+    }
+    &:after {
+        width: 2px;
+        height: 10px;
+        left: 4px;
+        top: 0;
+    }
+}
+.pxl-icon--minus {
+    height: 10px;
+    width: 10px;
+    position: relative;
+    cursor: pointer;
+    &:before {
+        content: '';
+        background-color: #122a00;
+        position: absolute;
+        @include transition(all .25s cubic-bezier(.645,.045,.355,1));
+    }
+    &:before {
+        width: 10px;
+        height: 2px;
+        top: 4px;
+        left: 0;
+    }
+}

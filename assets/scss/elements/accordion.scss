@@ -1,0 +1,99 @@
+.pxl-accordion {
+    .pxl-accordion--title {
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+    .pxl-accordion--content {
+        display: none;
+    }
+    .pxl-icon--plus {
+        font-style: normal;
+    }
+}
+
+.pxl-accordion1 {
+    &.pxl-accordion-style-default, &.pxl-accordion-style-light{
+        .pxl-accordion--title {
+            padding: 15px 0;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            border-bottom: 1px solid #223035;
+            gap: 15px;
+            @include transition(transform 300ms linear 0ms);
+            color: var(--primary-color);
+            .pxl-title--text {
+                flex-grow: 1;
+            }
+        }
+        .pxl-icon--action {
+            min-width: 10px;
+            width: 10px;
+            height: auto;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 2px;
+                transform: translate(-50%, -50%);
+                background-color: #20282D;
+                @include transition(transform 300ms linear 0ms);
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 2px;
+                transform: translate(-50%, -50%) rotate(90deg);;
+                background-color: #20282D;
+                @include transition(transform 300ms linear 0ms);
+            }
+            
+        }
+        .pxl-accordion--content {
+            padding: 19px 0 5px 0;
+            color: var(--primary-color);
+        }
+        .pxl--item {
+            @include transition(transform 300ms linear 0ms);
+            &.active {
+                .pxl-icon--action {
+                    &::after {
+                        transform: translate(-50%, -50%) rotate(0deg);
+                    } 
+                }
+            }
+        }
+    }
+    &.pxl-accordion-style-light {
+        .pxl-accordion--title {
+            color: #FFF;
+            border-bottom: 1px solid #FFF;
+        }
+        .pxl-accordion--content, .pxl-title--text{
+            color: #FFF;
+        }
+        .pxl-icon--action {
+            &::before {
+                content: "";
+                background-color: #FFF;
+            }
+            &::after {
+                background-color: #FFF;
+                content: "";
+            }
+            
+        }
+    }
+    &.pxl-none-divider {
+        .pxl-accordion--title {
+            border-bottom: none;
+        }
+    }
+}
+
+body.rtl {
+}

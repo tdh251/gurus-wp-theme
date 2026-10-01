@@ -1,0 +1,235 @@
+.pxl-btn-video {
+    position: relative;
+    z-index: 99;
+    &.style1 {
+        width: 189px;
+        height: 189px;
+        border-radius: 50%;
+        color: #FFF;
+        font-size: 30px;
+        border: 1px solid rgba($color: #FFF, $alpha: 0.6);
+        background-color: rgba($color: #FFF, $alpha: 0.3);
+        @media #{$max-lg3} {
+            max-width: 130px;
+            max-height: 130px;
+        }
+        @media #{$max-xs} {
+            max-width: 100px;
+            max-height: 100px;
+        }
+        @extend .pxl-video-btn-effect;
+    }
+    &.style2 {
+        width: 80px;
+        height: 80px;
+        color: #FFF;
+        border-radius: 50%;
+        border: 3px solid rgba($color: #FFF, $alpha: .2);
+        background-color: transparent;
+        z-index: 4;
+        @include transition(background-color .3s linear 0s);
+        @extend .pxl-video-btn-effect;
+        &:hover, &:focus {
+            background-color: rgba($color: #FFF, $alpha: .7);
+        }
+    }
+    &.style3 {
+        width: 230px;
+        height: 230px;
+        border-radius: 230px;
+        border: 1px solid #FFF;
+        @media #{$max-sm} {
+            width: 200px;
+            height: 200px;
+        }
+        @media #{$max-xs} {
+            width: 170px;
+            height: 170px;
+        }
+    }
+}
+
+.pxl-video-btn-effect {
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#fff, 0.63);
+        border-radius: 50%;
+        animation: pxl_pulse_border 1500ms ease-out infinite;
+        -webkit-animation: pxl_pulse_border 1500ms ease-out infinite;
+        z-index: 0;
+        border-radius: inherit;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        backdrop-filter: blur(5px);
+        border-radius: 50%;
+        z-index: -1;
+    }
+}
+// PXL Video Player Layout 1 
+// Only button and image feature
+.pxl-video-player1 {
+    .pxl-video--inner {
+        position: relative;
+    }
+    .pxl-bg--overlay {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: .2);
+        z-index: 1;
+    }
+    .pxl-video--bg {
+        position: relative;
+        width: 100%;
+    }
+    .pxl-bg-image {
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .btn-video-wrap {
+        position: absolute;
+        z-index: 99;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+    }
+
+    .pxl-video--imagebg {
+        position: relative;
+        overflow: hidden;
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: -60px;
+        }
+    }
+
+    &:hover {
+        .pxl-btn-video {
+            &.style3 {
+                @extend .pxl-video-btn-effect;
+            }
+        }
+    }
+}
+
+// PXL Video Player Layout 2
+// Image feature, name[button, video], title
+.pxl-video-player2 {
+    display: flex;
+    .pxl-video--inner {
+        width: 100%;
+        position: relative;
+        background: transparent;
+    }
+    .pxl-video--bg {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        border-radius: 30px;
+        box-shadow: 0px 30px 100px 0px rgba(32, 93, 106, 0.45);
+    }
+    .pxl-bg-image {
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &::before {
+            position: absolute;
+            content: "";
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(18, 56, 64, 0.20) 0%, rgba(18, 56, 64, 0.20) 100%);
+        }
+    }
+    .pxl-video--holder {
+        position: absolute;
+        left: 0;
+        padding: 82px 82px 84px 82px;
+        bottom: 0;
+        @media #{$max-lg} {
+            padding: 30px;
+        }
+        @media #{$max-sm} {
+            padding: 15px;
+        }
+        .pxl-video--title {
+            display: block;
+            margin-bottom: 31px;
+            letter-spacing: -0.42px;
+            max-width: 792px;
+            &:hover {
+                a {
+                    color: rgba($color: #FFF, $alpha: .7);
+                }
+            }
+            @media #{$max-lg} {
+                font-size: 36px;
+                max-width: 585px;
+            }
+            @media #{$max-md1} {
+                font-size: 32px;
+                max-width: 555px;
+            }
+            @media #{$max-xs} {
+                font-size: 28px;
+            } 
+        }
+        .pxl-video--content {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            .pxl-video--name {
+                margin-top: 3px;
+                &:hover {
+                    a{
+                        color: rgba($color: #FFF, $alpha: .7);
+                    }
+                }
+            }
+        }
+    }
+
+    &.video-style1 {
+        .pxl-video--bg {
+            box-shadow: 0px 30px 100px 0px rgba(105, 105, 105, 0.45);
+        }
+        .pxl-bg-image {
+            &::before {
+                background: linear-gradient(0deg, rgba(54, 54, 54, 0.20) 0%, rgba(54, 54, 54, 0.20) 100%);
+            }
+        }
+    }
+    &.video-style2 {
+        .pxl-video--bg {
+            box-shadow: none;
+        }
+        .pxl-bg-image {
+            &::before {
+                background: linear-gradient(0deg, rgba(11, 14, 34, 0.21) 0%, rgba(11, 14, 34, 0.21) 100%);
+            }
+        }
+    }
+}
+
+
+

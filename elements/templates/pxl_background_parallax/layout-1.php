@@ -1,0 +1,3 @@
+<div class="pxl-background-parallax-wrapper <?php echo esc_attr($settings['pxl_animate']); ?>" data-wow-delay="<?php echo esc_attr($settings['pxl_animate_delay'].'ms'); ?>"> 
+    <div class="pxl-item--background pxl-rellax-parallax" style="background-image: url('<?php echo esc_url($settings['bg_img']['url'] ?? ''); ?>')" data-rellax-speed="<?php echo esc_attr($settings['parallax_value']); ?>"></div>
+</div>

@@ -1,0 +1,148 @@
+// Layout
+.elementor-widget:not(:last-child) {
+    margin-bottom: 0;
+}
+
+// PXL Social Icons
+.pxl-social-share {
+    .pxl-social--inner{
+        width: 100%; 
+    }
+    .pxl-items {
+        display: flex;
+        align-items: center;
+    }
+    .pxl-item {
+        border-radius: 50%;
+        @extend .pxl-flex-center;
+        i {
+            position: relative;
+            z-index: 9;
+        }
+    }
+    &.pxl-layout-vertical {
+        .pxl-items {
+            flex-direction: column;
+            align-items: start;
+        }
+    }
+
+    &.style-default {
+        .pxl-items {
+            gap: 20px;
+        }
+        .pxl-item {
+            font-size: 14px;
+            @include transition(all .25s ease 0s);
+            &:hover{
+                color: rgba($color: #FFF, $alpha: .7);
+                transform: scale(1.25);
+            }
+        }
+    }
+    &.style-round-box1 {
+        .pxl-items {
+            gap: 20px;
+        }
+        .pxl-item {
+            position: relative;
+            min-width: 48px;
+            height: 48px;
+            background-color: #111;
+            color: #FFF; 
+            @include transition(all .3s linear 0s);
+            &.pxl-hover-scale {
+                &::after {
+                    background-color: #FFF;
+                }
+                &:hover {
+                    color: #111;
+                }
+            }
+        }
+    }
+    &.style-round-box2 {
+        .pxl-items {
+            gap: 11.5px;
+        }
+        .pxl-item {
+            min-width: 22px;
+            height: 22px;
+            @extend .pxl-bg-green-2;
+            color: #19272B;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            @include transition(all .3s linear 0s);
+            &:hover {
+                background-color: #FFF;
+                color: #111;
+            }
+            &.pxl-hover-scale { 
+                &::after {
+                    background-color: #FFF;
+                }
+            }
+        }
+    }
+    &.style-round-box3 {
+        .pxl-items {
+            gap: 16px;
+        }
+        .pxl-item {
+            position: relative;
+            min-width: 48px;
+            height: 48px;
+            @extend .pxl-dark-200;
+            background-color: #E1F2F2;
+            @include transition(color .3s linear 0s);
+            &.pxl-hover-scale { 
+                &::after {
+                    background-color: #FFF;
+                }
+            }
+        }
+    }
+    &.style-round-box4 {
+        .pxl-items {
+            gap: 16px;
+        }
+        .pxl-item {
+            position: relative;
+            min-width: 48px;
+            height: 48px;
+            @extend .pxl-bg-green-1;
+            color: #FFF;
+            @include transition(all .3s linear 0s);
+            &.pxl-hover-scale {
+                &::after {
+                    transition: .3s;
+                    background-color: #FFF;
+                }
+            }
+            &:hover {
+                @extend .pxl-green-1;
+            }
+        }
+    }
+    &.style-round-box5 {
+        .pxl-items {
+            gap: 17px;
+        }
+        .pxl-item {
+            min-width: 54px;
+            height: 54px;
+            border: 1px solid rgba($color: #FFF, $alpha: .25);
+            color: #FFF;
+            font-size: 16px;
+            &.pxl-hover-scale {
+                &::after, &::before {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+

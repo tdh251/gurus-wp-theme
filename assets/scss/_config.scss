@@ -1,0 +1,257 @@
+// Grid
+//--------------------------------------------------
+
+
+.pxl-section-offset-left{
+    @media (min-width: 1280px){
+        &.pxl-container-width-container-1200{
+            padding-left: calc( (100% - 1490px)/2) !important;
+        }
+
+        &.pxl-container-width-container-1300{
+            padding-left: calc( (100% - 1332px)/2) !important;
+        }
+
+        &.pxl-container-width-container-1640{
+            padding-left: calc( (100% - 1640px)/2) !important;
+        }
+        &.pxl-container-width-container-1735{
+            padding-left: calc( (100% - 1735px)/2) !important;
+        }
+        &.pxl-container-width-container-1478{
+            padding-left: calc( (100% - 1568px)/2) !important;
+        }
+    }
+}
+
+.pxl-section-offset-right{
+    @media (min-width: 1280px){
+        &.pxl-container-width-container-1400{
+            padding-right: calc( (100% - 1600px)/2) !important;
+        }
+    }
+}
+
+.pxl-column-offset-right {
+    &.pxl-container-width-1400 {
+        padding-right: calc( (100% - 1540px)/2 ) !important;
+    }
+}
+
+@media #{$max-lg} {
+    .pxl-mega-menu {
+        .elementor-section {
+            padding: 0 !important;
+            width: auto !important;
+            left: 0 !important;
+        }
+    }
+}
+
+.pxl-grid {
+    .pxl-grid-masonry {
+        position: relative;
+    }
+    .grid-sizer {
+        z-index: -1;
+    }
+    .pxl-load-more {
+        text-align: center;
+        padding: 0 15px;
+    }
+    @media #{$min-xl} {
+        .col-xl-pxl5 {
+            -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+        .col-lg-66-pxl {
+            -ms-flex: 0 0 66.6666666%;
+            flex: 0 0 66.6666666%;
+            max-width: 66.6666666%;
+        }
+    }
+    @media #{$min-xl} {
+        .col-xl-66-pxl {
+            -ms-flex: 0 0 66.6666666%;
+            flex: 0 0 66.6666666%;
+            max-width: 66.6666666%;
+        }
+    }
+}
+
+.elementor-editor-active .grid-sizer {
+    display: none;
+}
+
+// Start Swiper Carousel
+//--------------------------------------------------
+.pxl-carousel-inner {
+    overflow: hidden;
+}
+.pxl-swiper-container {
+    margin: 0 -15px;
+    position: relative;
+    overflow: hidden;
+}
+.pxl-swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.pxl-swiper-slide {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: auto;
+    position: relative;
+    padding: 0 15px;
+}
+
+.pxl-swiper-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    .pxl-swiper-current-slide, .pxl-swiper-total-slides {
+        font-size: 18px;
+        font-weight: 700;
+        color: #cccabf;
+        @extend .ft-theme-default;
+        margin: 0 14px;
+        &:before {
+            content: '0';
+        }
+    }
+    .pxl-swiper-current-slide {
+        color: #0a1316;
+    }
+}
+
+.pxl-swiper-boxshadow {
+    .pxl-carousel-inner {
+        margin:  -35px;
+        .pxl-swiper-container {
+            padding: 35px;
+        }
+    }
+    .pxl-swiper-slide {
+        @include transition(opacity .25s cubic-bezier(.645,.045,.355,1));
+    }
+    .pxl-swiper-slide:not(.swiper-slide-visible) {
+        opacity: 0;
+    }
+    @media #{$max-lg} {
+        .pxl-swiper-dots.style-1.pxl-swiper-pagination-progressbar {
+            margin-left: 45px;
+            margin-right: 45px;
+        }
+    }
+}
+
+.pxl-swiper-slider {
+    position: relative;
+    &.pxl-swiper-arrow-show .pxl-swiper-arrow {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.pxl-swiper-nogap {
+    .pxl-swiper-container {
+        margin: 0;
+        .pxl-swiper-slide {
+            padding: 0;
+        }
+    }
+}
+
+.pxl-swiper-thumbs {
+    overflow: hidden;
+    padding: 0 15px;
+    .swiper-slide {
+        cursor: pointer;
+        padding: 0 15px;
+    }
+}
+.swiper-container-vertical {
+    height: 300px;
+    .pxl-swiper-wrapper, .swiper-wrapper {
+        flex-direction: column;
+    }
+    .pxl-swiper-slide, .swiper-slide {
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+}
+
+[data-slider-mode="fade"] .swiper-slide-active {
+    z-index: 9;
+}
+
+.swiper-creative .pxl-swiper-slide {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition-property: transform,opacity,height;
+    transition-property: transform;
+}
+.swiper-3d .pxl-swiper-wrapper {
+    transform-style: preserve-3d;
+    transform: translate3d(0px,0,0);
+    transition-property: transform;
+    transition-timing-function: var(--swiper-wrapper-transition-timing-function,initial);
+}
+.swiper-3d .swiper-cube-shadow, .swiper-3d .pxl-swiper-slide {
+    transform-style: preserve-3d;
+}
+// End Swiper Carousel
+//--------------------------------------------------
+
+// Elementor - Column Settings
+//--------------------------------------------------
+.pxl-col-align-start {
+    > .elementor-widget-wrap {
+        justify-content: flex-start;
+    }
+    .elementor-inner-section > .elementor-container {
+        margin-left: 0;
+    }
+}
+.pxl-col-align-center {
+    > .elementor-widget-wrap {
+        justify-content: center;
+    }
+}
+.pxl-col-align-end {
+    > .elementor-widget-wrap {
+        justify-content: flex-end;
+    }
+    .elementor-inner-section > .elementor-container {
+        margin-right: 0;
+    }
+}
+
+body.rtl {
+    
+}
+
+.elementor-section .pxl-mega-menu-elementor {
+    max-height: none !important;
+}
+
+.elementor-editor-active.single-pxl-template {
+    background-color: #d9d9d9 !important;
+}

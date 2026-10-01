@@ -1,0 +1,179 @@
+/*--------------------------------------------------------------
+# Team Grid/Carousel
+--------------------------------------------------------------*/
+.pxl-team-layout1 {
+	&.pxl-team-carousel1 {
+		&.pxl-wavy-style {
+			.pxl-swiper-wrapper {
+				.pxl-swiper-slide {
+					&:nth-child(odd) {
+						.pxl-item--inner {
+							margin-top: 71px;
+						}
+					}
+				}
+			}
+		}
+		&.style-1, &.style-2 {
+			.pxl-swiper-container {
+				margin: -22.5px;
+			}
+			.pxl-swiper-wrapper {
+				.pxl-swiper-slide {
+					padding: 22.5px;
+					display: flex;
+					gap: 45px;
+					flex-direction: column;
+					@media #{$max-sm} {
+						gap: 30px;
+					}
+				}
+			}
+			.pxl-item--title {
+				@media #{$max-md1} {
+					font-size: 23px;
+				}
+			}
+			.pxl-item--inner {
+				.pxl-content--inner {
+					transform: scaleY(0);
+					opacity: 0;
+					@include transition(all .3s ease);
+				}
+				&:hover {
+					.pxl-content--inner {
+						transform: scaleY(1);
+						opacity: 1;
+					}
+				}
+			}
+		}
+		.pxl-swiper-container {
+			margin: -20px;
+		}
+		.pxl-swiper-wrapper {
+			.pxl-swiper-slide {
+				padding: 20px;
+			}
+		}
+	}
+	.pxl-item--link {
+		@extend .pxl-absolute-full;
+		z-index: 9;
+	}
+	.pxl-item--inner {
+		position: relative;
+		.pxl-item--image
+		{
+			position: relative;
+			img {
+				width: 100%;
+			}
+		} 
+		.pxl-item--overlay {
+			@extend .pxl-absolute-center;
+			background-color: rgba($color: #140E1D, $alpha: .2);
+			@extend .pxl-transition-linear;
+			transition-duration: .3s;
+			pointer-events: none;
+		}
+		.pxl-item--content {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			padding: 20px;
+			display: flex;
+			align-items: end;
+		}
+		.pxl-content--inner {
+			position: relative;
+			padding: 25px 15px 0 ;
+			cursor: pointer;
+			width: 100%;
+			text-align: center;
+			border-radius: 10px;
+			transition: all .3s linear;
+			overflow: hidden;
+			background-color: #FFF;
+			@include transition(background-color .3s linear 0s);
+			z-index: 99;
+		}
+		.pxl-item--title {
+			margin-bottom: 2px;
+			font-weight: 500;
+			@extend .pxl-dark-teal;
+			font-size: 27px;
+			line-height: 1.4;
+			@include transition(color .3s linear 0s);
+			@media #{$max-sm} {
+				font-size: 23px;
+			}
+		}
+		.pxl-item--position {
+			@extend .pxl-dark-slate;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1.6;
+			margin-bottom: 16px;
+			@include transition(color .3s linear 0s);
+		}
+		.pxl-item--social {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+			height: 0;
+			overflow: hidden;
+			margin-bottom: 11px;
+			opacity: 0;
+			@include transition(all .3s ease 0s);
+			z-index: 999;
+			position: relative;
+			.pxl-social--link {
+				@extend .pxl-flex-center;
+				width: 16px;
+				height: 16px;
+				background-color: #FFF;
+				@extend .pxl-dark-teal;
+				font-size: 10px;
+				border-radius: 16px;
+				@include transition(transform .25s ease);
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+		}
+	}
+	&.style-2 {
+		.pxl-item--inner {
+			.pxl-item--social {
+				height: 26px;
+				margin-bottom: 27px;
+				opacity: 1;
+			}
+		}
+	}
+
+	&.default, &.pxl-wavy-style, &.pxl-team-grid1 {
+		.pxl-item--inner {
+			&:hover {
+				.pxl-content--inner {
+					background-color: #223035;
+				}
+				.pxl-item--title, .pxl-item--position {
+					color: #FFF;
+				}
+				.pxl-item--social {
+					height: 26px;
+					margin-bottom: 27px;
+					opacity: 1;
+				}
+				.pxl-item--overlay {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}

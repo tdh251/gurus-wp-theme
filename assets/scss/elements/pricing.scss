@@ -1,0 +1,114 @@
+.pxl-pricing.pxl-pricing1 {
+	width: 100%;
+	.pxl-pricing--inner {
+		position: relative;
+		text-align: center;
+		width: 100%;
+		background-color: #FFF;
+		border-radius: 22px;
+		overflow: hidden;
+		z-index: 9;
+		padding: 52px 15px 85px;
+	}
+	.pxl-item--shape {
+		position: absolute;
+		width: 584px;
+		height: 365px;
+		border-radius: 50%;
+		background: #E1F2F2;
+		top: -100px;
+		left: -47px;
+		right: -42px;
+		z-index: -1;
+	}
+	.pxl-item--popular {
+		text-align: center;
+		width: 100%;
+		margin-bottom: 25px;
+		color: #547079;
+		@extend .pxl-b3;
+		font-size: 15px;
+		span {
+			padding: 3px 10px;
+			background-color: #FFF;
+			text-transform: uppercase;
+			width: fit-content;
+		}
+	}
+	.pxl-item--price {
+		display: inline-flex;
+		color: #000;
+		font-family: 'Sora';
+		font-size: 66px;
+		line-height: 1.2381;
+		.pxl-item--currency {
+			display: inline;
+			padding-top: 5px;
+			font-family: "DM Sans";
+			font-size: 31px;
+			font-weight: 500;
+			line-height: 1.4;
+		}
+		@media #{$max-xs} {
+			font-size: 60px;
+		}
+	}
+	.pxl-item--package {
+		color: #000;
+		font-family: 'Sora';
+		font-size: 31px;
+		font-weight: 400;
+		line-height:  1.4;
+		margin-bottom: 74px;
+		@media #{$max-xs} {
+			font-size: 26px;
+		}
+	}
+	.pxl-item--feature {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	.pxl-items {
+		list-style: none;
+		margin-bottom: 42px;
+		.pxl-item {
+			display: flex;
+			align-items: center;
+			flex-wrap: nowrap;
+			gap: 5px;
+			color:#85979B;
+			font-family: "DM Sans";
+			font-size: 22px;
+			font-weight: 400;
+			line-height: 1.5;
+			+ .pxl-item {
+				margin-top: 14px;
+			}
+			@media #{$max-xs} {
+				font-size: 20px;
+			}
+		}
+	}
+	.pxl-btn-wrap {
+		text-align: center;
+		width: 100%;
+		.pxl-item--btn {
+			gap: 7px;
+			padding: 11px 37px;
+			border-radius: 200px;
+			color: #263037;
+			font-size: 18px;
+			font-weight: 400;
+			border: 1px solid #263037;
+			line-height: 2;
+			i {
+				font-size: 12px;
+			}
+			&:hover {
+				background-color: #263037;
+				color: #FFF;
+			}
+		}
+	}
+}

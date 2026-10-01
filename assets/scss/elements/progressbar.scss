@@ -1,0 +1,102 @@
+.pxl--progressbar {
+    @include transition(width 1.4s ease);
+    width: 0;
+    &.vertical {
+        @include transition(height 1.4s ease);
+        height: 0;
+    }
+}
+.pxl-progressbar-1 {
+    .pxl-progressbar--wrap {
+        display: flex;
+        height: 18px;
+        width: 100%;
+        align-items: center;
+        border-radius: 200px;
+        background-color: rgba($color: #223035, $alpha: 0.06);
+        border: 1px solid rgba($color: #223035, $alpha: 0.2);
+        padding: 4px;
+        .pxl--progressbar {
+            height: 10px;
+            border-radius: 10px;
+            background-color: #97BAC7;
+            position: relative;
+        }
+    }
+    .pxl--meta {
+        display: inline-flex;
+        align-items: center;
+        gap: 30px;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    .pxl--item {
+        width: 100%;
+        // padding-right: 15px;
+    }
+    .pxl--item + .pxl--item {
+        margin-top: 20px;
+        width: 100%;
+    }
+    &.pxl-d-horizontal {
+        display: flex;
+        column-gap: 137px;
+        .pxl--meta {
+            margin-bottom: 7px;
+        }
+        .pxl--item{
+            margin: 0;
+        }
+        &:last-child {
+            margin-right: 0
+        }
+    }
+    &.pxl-progressbar-light {
+        .pxl-progressbar--wrap {
+            border-radius: 20.25px;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            background: rgba(255, 255, 255, 0.06);
+            .pxl--progressbar {
+                border-radius: 8.966px 0px 0px 8.966px;
+                background:  #97BAC7;
+            }
+        }
+    }
+    &.pxl-progressbar-light2 {
+        .pxl-progressbar--wrap {
+            border-radius: 20.25px;
+            border: 1px solid rgba(34, 48, 53, 0.20);
+            background: rgba(34, 48, 53, 0.06);
+            .pxl--progressbar {
+                border-radius: 9px 0px 0px 9px;
+                background: #547079;
+            }
+        }
+        .pxl--title {
+            font-family: 'Sora';
+            color: #223035;
+            letter-spacing: -0.2px;
+            font-weight: 400;
+        }
+        .pxl--percentage {
+            font-family: 'Sora';
+            font-weight: 600;
+            color: #38464A;
+            letter-spacing: -0.2px;
+            font-size: 20px;
+        }
+    }
+    &.pxl-progressbar-dark {
+        .pxl-progressbar--wrap {
+            border-radius: 20.25px;
+            border: 1px solid rgba(34, 48, 53, 0.20);
+            background: rgba(34, 48, 53, 0.06);
+            .pxl--progressbar {
+                border-radius: 8.966px 0px 0px 8.966px;
+                background:  #111;
+            }
+        }
+    }
+}
+
